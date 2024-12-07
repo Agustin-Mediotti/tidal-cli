@@ -1,0 +1,32 @@
+# Environment Variables
+@TIDAL_AUTH_TOKEN=
+@COUNTRY_CODE=AR
+
+###
+
+# ARTISTS
+
+###
+
+# Get all artists
+# Retrieves all artist details by available filters or without (if applicable).
+GET https://openapi.tidal.com/v2/artists?countryCode={{COUNTRY_CODE}}&include=albums&filter%5Bid%5D=1566
+Content-Type: application/vnd.api+json
+Authorization: Bearer {{TIDAL_AUTH_TOKEN}}
+
+###
+
+# Get single artist
+# Retrieves artist details by an unique id.
+GET https://openapi.tidal.com/v2/artists/1566?countryCode={{COUNTRY_CODE}}&include=albums
+Content-Type: application/vnd.api+json
+Authorization: Bearer {{TIDAL_AUTH_TOKEN}}
+
+# TODO:
+# Relationship: albums
+# Relationship: radio
+# Relationship: roles
+# Relationship: similarArtists
+# Relationship: trackProviders
+# Relationship: tracks
+# Relationship: videos

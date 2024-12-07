@@ -1,0 +1,39 @@
+# Environment Variables
+@TIDAL_AUTH_TOKEN=
+@COUNTRY_CODE=AR
+@QUERY=moon
+
+###
+
+# SEARCH
+
+###
+
+# Search for music metadata by a query
+# Search for music: albums, artists, tracks, etc.
+GET https://openapi.tidal.com/v2/searchresults/{{QUERY}}?countryCode={{COUNTRY_CODE}}&include=artists
+Content-Type: application/vnd.api+json
+Authorization: Bearer {{$TIDAL_APP_TOKEN}}
+
+###
+
+# Relationship: artists
+# Search for artists by a query.
+GET https://openapi.tidal.com/v2/searchresults/{{QUERY}}/relationships/artists?countryCode={{COUNTRY_CODE}}&include=artists
+Content-Type: application/vnd.api+json
+Authorization: Bearer {{TIDAL_AUTH_TOKEN}}
+
+###
+
+# Relationship: topHits
+# Search for top hits by a query: artists, albums, tracks, videos.
+GET https://openapi.tidal.com/v2/searchresults/{{QUERY}}/relationships/topHits?countryCode={{COUNTRY_CODE}}&include=topHits
+Content-Type: application/vnd.api+json
+Authorization: Bearer {{TIDAL_AUTH_TOKEN}}
+
+# TODO:
+
+# Relationship: albums
+# Relationship: playlists
+# Relationship: tracks
+# Relationship: videos

@@ -1,0 +1,30 @@
+# Environment Variables
+@TIDAL_AUTH_TOKEN=
+@COUNTRY_CODE=AR
+
+###
+
+# TRACKS
+
+###
+
+# Get all tracks
+# Retrieves all track details by available filters or without (if applicable).
+GET https://openapi.tidal.com/v2/tracks?countryCode={{COUNTRY_CODE}}&include=albums&filter%5Bisrc%5D=USSM12209515&filter%5Bid%5D=251380837
+Content-Type: application/vnd.api+json
+Authorization: Bearer {{TIDAL_AUTH_TOKEN}}
+
+###
+
+# Get single track
+# Retrieves track details by an unique id.
+GET https://openapi.tidal.com/v2/tracks/251380837?countryCode={{COUNTRY_CODE}}&include=albums
+Content-Type: application/vnd.api+json
+Authorization: Bearer {{TIDAL_AUTH_TOKEN}}
+
+# TODO:
+# Relationship: albums
+# Relationship: artists
+# Relationship: providers
+# Relationship: radio
+# Relationship: similarTracks

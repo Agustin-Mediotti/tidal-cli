@@ -1,0 +1,29 @@
+# Environment Variables
+@TIDAL_AUTH_TOKEN=
+@COUNTRY_CODE=AR
+
+###
+
+# ALBUMS
+
+###
+
+# Get Single Album 
+# Retrieves album details by an unique id.
+GET https://openapi.tidal.com/v2/albums/251380836?countryCode={{COUNTRY_CODE}}&include=artists
+Content-Type: application/vnd.api+json
+Authorization: Bearer {{TIDAL_AUTH_TOKEN}}
+
+###
+
+# Get All Albums
+# Retrieves all album details by available filters or without (if applicable).
+GET https://openapi.tidal.com/v2/albums?countryCode={{COUNTRY_CODE}}&include=artists&filter%5BbarcodeId%5D=196589525444&filter%5Bid%5D=251380836
+Content-Type: application/vnd.api+json
+Authorization: Bearer {{TIDAL_AUTH_TOKEN}}
+
+# TODO: 
+# Relationship: artists
+# Relationship: items
+# Relationship: providers
+# Relationship: similarAlbums
